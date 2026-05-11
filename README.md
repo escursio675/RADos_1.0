@@ -6,7 +6,7 @@ Operating Systems are arguably one, if not the most instrumental pieces of softw
 
 Frankly speaking, the current scenario in the field of Operating Systems leaves much to be desired. Even more so when many current OSes, previously considered to be highly optimized and performance critical systems, now come prevalent with a bundle of AI features as a, what I consider to be, an "additional layer of abstraction on OS functionalities".
 
-This project attempts to try a different approach which is, essentially a trade-off between performance and computing-proficiency, if that is considered to be a trade-off in the first place. We attempt to address issues like [hardware degradation related to Operating Systems](https://www.sciencedirect.com/science/article/abs/pii/S0164121206001750) and try a new approach in low-end computing. For this, we have decided to try a [Unikernel](https://en.wikipedia.org/wiki/Unikernel) approach. RADos is , to us, a small but still significant approach in that direction.
+This project attempts to try a different approach which is, essentially a trade-off between performance and computing-proficiency, if that is considered to be a trade-off in the first place. We attempt to address issues like [hardware degradation related to Operating Systems](https://www.sciencedirect.com/science/article/abs/pii/S0164121206001750) and try a new approach in low-end computing. For this, we have decided to try a [Unikernel](https://en.wikipedia.org/wiki/Unikernel) approach. RADos is , to us, a small but still significant step in that direction.
 
 # About RADos
 The following are some features of RADos, supported as of now:
