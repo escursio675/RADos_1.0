@@ -23,8 +23,8 @@ The following are some features of RADos, supported as of now:
 - Barebones terminal-like set of minimal commands
 # Contributors
 
-[Rajdeep Gogoi](https://github.com/rajdeepgogoi)
-[Abhimanyu Saikia](https://github.com/escursio675)
+[Rajdeep Gogoi](https://github.com/rajdeepgogoi), 
+[Abhimanyu Saikia](https://github.com/escursio675), 
 [Debraj Roy](https://github.com/roydebraj2003)
 
 # References
