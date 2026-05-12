@@ -26,13 +26,11 @@ void kmain(uint32_t magic, struct multiboot_info* bootInfo){
     initTimer();
     initKeyboard();
 
-    //help();
+    help();
 
-    //printf("\n\nUptime: %lds", uptime());
+    printf("\n\nUptime: %lds\n", uptime());
 
-    //greet();
-
-    //clear();
+    greet();
 
     hexdump(bootInfo, 128);
     

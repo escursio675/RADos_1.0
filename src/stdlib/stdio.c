@@ -7,6 +7,7 @@ void putc(char c){
     buf[0] = c;
     buf[1] = '\0';
     print(buf);
+    updateCursor();
 }
 
 void puts(const char* s){
@@ -14,6 +15,8 @@ void puts(const char* s){
         putc(*s);
         s++;
     }
+
+    updateCursor();
 }
 
 void printf(const char* fmt, ...){
@@ -116,7 +119,9 @@ void printf(const char* fmt, ...){
             break;
             }
         fmt++;
-    }    
+    }
+    
+    updateCursor();
 }
 
 const char possibleChars[] = "0123456789abcdef";
@@ -186,5 +191,6 @@ int * printf_number(int* argp, int length, bool sign, int radix){
         putc(buffer[pos]);
     }
 
+    updateCursor();
     return argp;
 }
