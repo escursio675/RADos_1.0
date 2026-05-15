@@ -7,6 +7,16 @@ uint16_t* const vga = (uint16_t* const) 0xC00B8000;
 const uint16_t defaultColor = (COLOR8_LIGHT_GREY << 8) | (COLOR8_BLACK << 12);
 uint16_t currentColor = defaultColor;
 
+void updateCursor(){
+    uint16_t pos = line * width + column;
+
+    outPortB(0x3D4, 0x0F);
+    outPortB(0x3D5, (uint8_t)(pos & 0xFF));
+
+    outPortB(0x3D4, 0x0E);
+    outPortB(0x3D5, (uint8_t)((pos >> 8) & 0xFF));
+}
+
 void Reset(){
     line = 0;
     column = 0;
@@ -17,6 +27,8 @@ void Reset(){
             vga[y * width + x] = ' ' | defaultColor;
         }
     }
+
+    updateCursor();
 }
 
 void newLine(){
@@ -75,6 +87,7 @@ void print(const char* s){
                 vga[line * width + (column++)] = *s | currentColor;
                 break;
         }
+        updateCursor();
         s++;
     }
 }

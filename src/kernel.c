@@ -10,14 +10,30 @@
 #include "memory.h"
 #include "util.h"
 
+#include "commands/help.h"
+#include "commands/uptime.h"
+#include "commands/clear.h"
+#include "commands/greet.h"
+#include "commands/hexdump.h"
+
 void kmain(uint32_t magic, struct multiboot_info* bootInfo);
 
 void kmain(uint32_t magic, struct multiboot_info* bootInfo){
     initGdt();
-    print("GDT is done!\r\n");
+    //print("GDT is done!\r\n");
+
     initIdt();
     initTimer();
     initKeyboard();
+
+    help();
+
+    printf("\n\nUptime: %lds\n", uptime());
+
+    greet();
+
+    hexdump(bootInfo, 128);
+    
 
     for(;;);
 }
