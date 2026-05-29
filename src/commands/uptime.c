@@ -1,5 +1,5 @@
-#include "../timer.h"
-#include "../vga.h"
+#include "../drivers/timer.h"
+#include "../drivers/vga.h"
 #include "uptime.h"
 #include "../stdint.h"
 

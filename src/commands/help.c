@@ -1,5 +1,5 @@
 #include "help.h"
-#include "../vga.h"
+#include "../drivers/vga.h"
 
 void help(){
     print("\nWelcome to RADos! The Commands List is:\r\n");

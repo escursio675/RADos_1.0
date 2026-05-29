@@ -1,4 +1,4 @@
-CFLAGS = -m32 -fno-stack-protector -fno-builtin
+CFLAGS = -m32 -fno-stack-protector -fno-builtin -Isrc -Isrc/drivers -Isrc/gdt -Isrc/interrupts -Isrc/stdlib -Isrc/commands
 
 all: clean kernel boot image
 
@@ -7,12 +7,12 @@ clean:
 
 kernel:
 	gcc $(CFLAGS) -c src/kernel.c -o kernel.o
-	gcc $(CFLAGS) -c src/vga.c -o vga.o
+	gcc $(CFLAGS) -c src/drivers/vga.c -o vga.o
 	gcc $(CFLAGS) -c src/gdt/gdt.c -o gdt.o
 	gcc $(CFLAGS) -c src/util.c -o util.o
 	gcc $(CFLAGS) -c src/interrupts/idt.c -o idt.o
-	gcc $(CFLAGS) -c src/timer.c -o timer.o
-	gcc $(CFLAGS) -c src/keyboard.c -o keyboard.o
+	gcc $(CFLAGS) -c src/drivers/timer.c -o timer.o
+	gcc $(CFLAGS) -c src/drivers/keyboard.c -o keyboard.o
 	gcc $(CFLAGS) -c src/stdlib/stdio.c -o stdio.o
 	gcc $(CFLAGS) -c src/commands/help.c -o help.o
 	gcc $(CFLAGS) -c src/commands/uptime.c -o uptime.o

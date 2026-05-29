@@ -1,6 +1,6 @@
 #include "stdint.h"
 #include "../util.h"
-#include "../vga.h"
+#include "../drivers/vga.h"
 #include "idt.h"
 
 struct idt_entry_struct idt_entries[256];
