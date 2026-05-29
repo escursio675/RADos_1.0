@@ -16,23 +16,31 @@
 #include "commands/greet.h"
 #include "commands/hexdump.h"
 
+#include "shell/shell.h"
+
 void kmain(uint32_t magic, struct multiboot_info* bootInfo);
 
 void kmain(uint32_t magic, struct multiboot_info* bootInfo){
+
+    printf("Loading drivers...\n");
+
     initGdt();
-    //print("GDT is done!\r\n");
+    print("GDT is done!\r\n");
 
     initIdt();
+    print("IDT is done!\r\n");
+
     initTimer();
+    print("Timers are done!\r\n");
+
     initKeyboard();
+    print("Keyboard is done!\r\n");
 
-    help();
-
-    printf("\n\nUptime: %lds\n", uptime());
+    print("All drivers successfully initialized!!!\n\n");
 
     greet();
 
-    hexdump(bootInfo, 128);
+    shell_init(bootInfo);
     
 
     for(;;);

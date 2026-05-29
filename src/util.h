@@ -1,7 +1,10 @@
+#pragma once
 
 void memset(void *dest, char val, uint32_t count);
 void outPortB(uint16_t Port, uint8_t Value);
 char inPortB(uint16_t port);
+
+int strcmp(const char* a, const char* b);
 
 #define CEIL_DIV(a,b) (((a + b) - 1)/b)
 

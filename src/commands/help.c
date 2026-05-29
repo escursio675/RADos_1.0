@@ -8,4 +8,5 @@ void help(){
     print("\nclear\tclear the text off of the screen");
     print("\ngreet\tgenerate a message from the developers");
     print("\nhexdump\tshow memory information");
+    print("\n\n");
 }

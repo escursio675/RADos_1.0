@@ -3,6 +3,7 @@
 #include "interrupts/idt.h"
 #include "stdlib/stdio.h"
 #include "keyboard.h"
+#include "../shell/shell.h"
 
 bool capsOn;
 bool capsLock;
@@ -121,11 +122,19 @@ void keyboardHandler(struct InterruptRegisters *regs){
             break;
         default:
             if(press == 0){
-                if (capsOn || capsLock){
-                    printf("%c", uppercase[scanCode]);
+
+                char c;
+
+                if(capsOn || capsLock){
+                    c = (char)uppercase[scanCode];
                 }
                 else{
-                    printf("%c", lowercase[scanCode]);
+                    c = (char)lowercase[scanCode];
+                }
+
+                // ignore non-printable special keys
+                if((uint32_t)c < 0xFFFFFF00){
+                    shell_input(c);
                 }
             }
 

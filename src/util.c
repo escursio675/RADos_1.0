@@ -21,3 +21,18 @@ char inPortB(uint16_t port){
 
 //rv is the character we are writing to and is port the port we are reading from
 //therfore the program reads from the port in the argument and returns rv which is the character read
+
+int strcmp(const char* a, const char* b){
+
+    while(*a && *b){
+
+        if(*a != *b){
+            return *a - *b;
+        }
+
+        a++;
+        b++;
+    }
+
+    return *a - *b;
+}

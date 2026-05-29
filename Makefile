@@ -19,6 +19,7 @@ kernel:
 	gcc $(CFLAGS) -c src/commands/clear.c -o clear.o
 	gcc $(CFLAGS) -c src/commands/greet.c -o greet.o
 	gcc $(CFLAGS) -c src/commands/hexdump.c -o hexdump.o
+	gcc $(CFLAGS) -c src/shell/shell.c -o shell.o
 
 boot: 
 	nasm -f elf32 src/boot.s -o boot.o
@@ -27,7 +28,7 @@ boot:
 
 
 image:
-	ld -m elf_i386 -T linker.ld -o kernel boot.o kernel.o vga.o gdt.o gdts.o util.o idt.o idts.o timer.o keyboard.o stdio.o help.o uptime.o clear.o greet.o hexdump.o
+	ld -m elf_i386 -T linker.ld -o kernel boot.o kernel.o vga.o gdt.o gdts.o util.o idt.o idts.o timer.o keyboard.o stdio.o help.o uptime.o clear.o greet.o hexdump.o shell.o
 	mv kernel RADOS/boot/kernel
 	grub-mkrescue -o kernel.iso RADOS/
 	rm *.o

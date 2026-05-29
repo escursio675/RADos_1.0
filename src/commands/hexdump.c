@@ -19,6 +19,6 @@ void hexdump(void* addr, uint32_t length) {
             }
         }
 
-        printf("\n");
+        printf("\n\n");
     }
 }
