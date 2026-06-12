@@ -32,3 +32,5 @@ The following are some features of RADos, supported as of now:
 - [x86 Assembly with NASM by OliveStem](https://www.youtube.com/playlist?list=PL2EF13wm-hWCoj6tUBGUmrkJmH1972dBB)
 - [Preliminary Work](https://github.com/escursio675/osdev-by-OliveStem)
 
+# Note
+The development of the version of RADos meant solely for "learning OS development" will cease at RADos 1.0. Any future improvements made will be done on a separate repository and will be linked here when such a repository is created.
