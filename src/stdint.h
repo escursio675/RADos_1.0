@@ -1,3 +1,4 @@
+//this file contains all of the type definitions used in RADos
 typedef signed char int8_t;
 typedef unsigned char uint8_t;
 

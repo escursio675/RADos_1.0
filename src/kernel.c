@@ -9,14 +9,17 @@
 #include "multiboot.h"
 #include "memory.h"
 #include "util.h"
+//include headers
 
 #include "commands/help.h"
 #include "commands/uptime.h"
 #include "commands/clear.h"
 #include "commands/greet.h"
 #include "commands/hexdump.h"
+//include commands
 
 #include "shell/shell.h"
+//include the shell
 
 void kmain(uint32_t magic, struct multiboot_info* bootInfo);
 
@@ -35,13 +38,16 @@ void kmain(uint32_t magic, struct multiboot_info* bootInfo){
 
     initKeyboard();
     print("Keyboard is done!\r\n");
+    //initialize drivers
 
     print("All drivers successfully initialized!!!\n\n");
 
     greet();
 
     shell_init(bootInfo);
+    //initialize the shell
     
 
     for(;;);
+    //hang the OS indefinitely
 }

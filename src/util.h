@@ -7,6 +7,7 @@ char inPortB(uint16_t port);
 int strcmp(const char* a, const char* b);
 
 #define CEIL_DIV(a,b) (((a + b) - 1)/b)
+//defines cieling division
 
 struct InterruptRegisters{
     uint32_t cr2;
@@ -15,3 +16,4 @@ struct InterruptRegisters{
     uint32_t int_no, err_code;
     uint32_t eip, csm, eflags, useresp, ss;
 };
+//struct to store register states during context switching

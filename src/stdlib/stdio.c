@@ -9,6 +9,8 @@ void putc(char c){
     print(buf);
     updateCursor();
 }
+//putc implementation
+//take a char buffer with the character and string terminator
 
 void puts(const char* s){
     while (*s){
@@ -18,7 +20,12 @@ void puts(const char* s){
 
     updateCursor();
 }
+//puts implementation
+//takes a string a prints it
 
+
+//following is the printf implementation
+//all the states used following this line are defined in stdio.h
 void printf(const char* fmt, ...){
     int* argp = (int*) &fmt;
     int state = PRINTF_STATE_START;
@@ -123,9 +130,12 @@ void printf(const char* fmt, ...){
     
     updateCursor();
 }
+//the above is the implementation of printf using Finite State Automata(FSA)
 
 const char possibleChars[] = "0123456789abcdef";
 
+
+//following is the implementation of printf for numbers
 int * printf_number(int* argp, int length, bool sign, int radix){
     char buffer[32] = "";
     uint32_t number;

@@ -6,6 +6,8 @@ void printf(const char* fmt, ...);
 int * printf_number(int*, int, bool, int);
 
 extern void x86_div64_32(uint64_t, uint32_t, uint64_t*, uint32_t*);
+//64-bit division implementaion
+//C does not support 64-bit division and hence, must be defined at hardware level using assembly 
 
 #define PRINTF_STATE_START 0
 #define PRINTF_STATE_LENGTH 1
@@ -18,3 +20,4 @@ extern void x86_div64_32(uint64_t, uint32_t, uint64_t*, uint32_t*);
 #define PRINTF_LENGTH_SHORT 2
 #define PRINTF_LENGTH_LONG 3
 #define PRINTF_LENGTH_LONG_LONG 4
+//above are the numeric enumerations for the printf states

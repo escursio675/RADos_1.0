@@ -5,6 +5,9 @@
 
 struct idt_entry_struct idt_entries[256];
 struct idt_ptr_struct idt_ptr;
+//above is the IDT entry table
+//it stores the individual data segments, 256 of them, accessed through the pointer "idt_ptr"
+//More info about the table and entry structure @ https://wiki.osdev.org/Interrupt_Descriptor_Table
 
 extern void idt_flush(uint32_t);
 
